@@ -1,0 +1,165 @@
+DOCKER :CONTAINERAIZATION TOOL
+
+DOCKER HUB---->PULL------>IMAGES------>RUN----->CONTAINERS
+
+CREATE EC2 UBUNTU MACHINE
+
+apt install docker.io -y 
+
+TO INSTALL DOCKER COMMANDS
+
+docker --version to VIEW VERSION
+
+docker pull httpd 
+
+DOCKER HUB LA PULL PANNANUM
+
+DOCKER SERVER LA IRUNTHU NAMMA SERVER KU ORU IMAGE EDUTHUTU VARUM
+
+docker images 
+
+TO VIEW IMAGES
+
+docker run -itd --name httpdcontainer -p "1606:80" httpd
+
+TO RUN CONTAINERS
+
+docker ps 
+  
+TO VIEW CONTAINERS
+
+ docker exec -it 653b599c85f8 /bin/bash
+
+TO GO INSIDE THE CONTAINERS
+
+exit
+
+TO LOGOUT THE CONTAINERS
+
+docker stop container id 
+
+TO STOP CONTAINER 
+
+docker ps -a
+
+TO SEE RUNNING CONTAINERS
+
+docker start container id
+
+TO START DOCKER CONTAINERS
+
+docker rm container id
+
+TO REMOVE CONTAINERS
+
+docker rm -f container id
+
+TO REMOVE FORCEFULL
+
+docker info id
+
+ENTIRE DOCKER INFORMATION
+
+docker inspect id
+
+PARTICULAR INFORMATION
+
+WHICH ARCHITECHTURE DOCER IS USING
+
+client server architechture
+
+
+docker logs container id
+
+DOCKER ALLOWS DATABASE
+
+apt install git -y 
+
+TO INSTALL 
+
+docker commit 653b599c85f8 myimage
+
+COMMIT
+CUSTOMIZED IMAGE
+
+docker save -o myimage.tar myimage
+
+TO SAVE IMAGE TO COMPRESSED FILE
+
+docker load -i myimage.tar
+
+TO REDOWNLOAD THE DELETED IMAGE
+
+
+------------------------------------------------------------------------------------------------------------
+
+DAY 2 
+
+DOCKER LOGIN PANNANUM  
+USERNAME AND PASSWORD
+
+
+IMAGE NAME CHANGE:
+
+docker tag myimage chandru1606/myimage2
+
+DOCKER PUSH
+
+docker push (imagename)
+
+HOW TO WRITE A DOCKER FILE
+
+D (CAPS)
+Docker file
+vi Dockerfile
+
+athula file eluthi run panna easy ah irukum
+
+HOW TO BUILD OR RUN A DOCKER FILE
+
+docker build -t file1st .
+
+FROM file1st
+MAINTAINER chandru
+RUN yum install git -y
+RUN yum install vim wget -y
+
+
+
+docker run -itd --name file2 file2nd
+
+TO RUN 
+
+------------------------------
+FROM ubuntu
+MAINTAINER Monisha
+RUN apt-get update
+RUN apt-get install vim openssh-server -y
+RUN sed -i's/#PermitRootLogin prohibit-password/PermitRootLogin yes/'
+/etc/ssh/sshd config
+RUN echo 'root:root123' | chpasswd
+RUN mkdir /var/run/sshd
+CMD ("/usr/sbin/sshd", "-D*]
+EXPOSE 22
+
+TO ADD PASSWORD FOR
+
+ docker run -itd --name db -e MYSQL_ROOT_PASSWORD=chandru123  mysql:5.5
+
+TO LINK 
+
+docker run -d --name myweb-server2 --link db:mysql -p "2222:80" wordpress
+
+FROM
+
+
+HOW TO GIVEN INTERNET IN DOCKER
+
+docker run -d --name c1 alpine 172.17.0.12
+docker run -d --name c2 alpine 172.17.0.13
+
+                                     
+Today I  completed the task in prometheus : how to collect numeric metrics from services and allow metric data to be accessed via http endpoints  .
+and completed aws billing management console for this week and monitoring zabbix servers.
+
+              
